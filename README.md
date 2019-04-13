@@ -1,5 +1,5 @@
 # HiWorld
-social app that is using gps, help you to add other users near you
+social app that is using geolocation, help you to add other users near you
 
 
 ## Table of Contents
