@@ -14,8 +14,8 @@ Uses users’ geolocation (under permission) find other users who’s open to co
 ### App Evaluation
 - **Category:** Social Networking / Social Communication 
 - **Mobile:** This app would be primarily developed for mobile but would perhaps be just as viable on an iPad, such as WeChat (only allows users to login if they agreed to login with other devices simultaneously) or other similar apps. Functionality wouldn't be limited to mobile devices, however mobile version could potentially have more features.
-- **Story:** Locates users’ coordinates and show them other users who’s open to strangers to “sayHI”. The user can then decide to message this person with our “sayHi” button and start up conversations if this person respond with “sayHi” button or even befriend them if wanted.
-- **Market:** Any individual could choose to use this app, and to keep it a safe environment, people would be organized into gender groups.
+- **Story:** Locates users’ coordinates and show them other users who’s open to strangers to “sayHi”. The user can then decide to message this person with our “sayHi” button and start up conversations if this person respond with “sayHi” button or even befriend them if wanted.
+- **Market:** Any individual could choose to use this app, and to keep it a safe environment, friend would be organized into alphabetical order.
 - **Habit:** This app could be used as often or unoften as the user wanted depending on how deep their social life is, and what exactly they're looking for.
 - **Scope:** First user would choose the person he or she wants to start the conversation with based on geolocation, then perhaps this could evolve into a social networking application as well to broaden its usage if that person would like to connect with this user. Large potential for use with Apple map API, Google map API, or other map API.
 
@@ -34,9 +34,7 @@ Uses users’ geolocation (under permission) find other users who’s open to co
 **Optional Nice-to-have Stories**
 
 * Posts for user to share their day with friends(friends only).
-* Gender icon on the side of the profile picture (i.e. pink user as female blue as male)
 * Profile Add-On: personal interests , recent post(users agreed to be seen by strangers) etc.
-* Optional modify search by gender button (i.e. only shows users with specific gender nearby)
 
 ### 2. Screen Archetypes
 
@@ -45,7 +43,7 @@ Uses users’ geolocation (under permission) find other users who’s open to co
    * Upon Reopening of the application, the user is not required to log in again as long as the user did not log out the account in the last session.
 * Messaging Screen - Chat for users to communicate (direct 1-on-1)
    * Upon selecting users in the “Friends” section and message screen opens (freely conversation with friends)
-   * Upon pressing the button “sayHI” to users nearby and message screen opens (only can start the conversation after other user respond)
+   * Upon pressing the button “sayHi” to users nearby and message screen opens (only can start the conversation after other user respond)
 * Profile Screen 
    * Allows user to upload a photo and fill in information about their personal interests and posts for strangers to see
 * World Screen.
@@ -76,7 +74,7 @@ Optional:
 * Settings -> Toggle settings
 
 ## Wireframes
-<img src="https://i.imgur.com/9CrjH1K.jpg" width=800><br>
+<img src="http://g.recordit.co/xOlsmQyqBc.gif" width=800><br>
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
