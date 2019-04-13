@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth-sunrise-in-space-johan-swanepoel" translatesAutoresizingMaskIntoConstraints="NO" id="71Z-BV-NSP">
+                                <rect key="frame" x="0.0" y="201.5" width="375" height="264"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="264" id="Rto-vr-NDQ"/>
+                                    <constraint firstAttribute="width" constant="375" id="s3R-TP-SNt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0H-Aa-HW7">
+                                <rect key="frame" x="97.5" y="220" width="180" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="KGl-v2-sj3"/>
+                                    <constraint firstAttribute="height" constant="127" id="KYf-zl-jk4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="100"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.017132095992565155" green="0.0054469192400574684" blue="0.011644777841866016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="a0H-Aa-HW7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="GQU-sp-L1d"/>
+                            <constraint firstItem="71Z-BV-NSP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Oj8-A2-kNq"/>
+                            <constraint firstItem="a0H-Aa-HW7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="b8q-aY-Mxc"/>
+                            <constraint firstItem="71Z-BV-NSP" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qLa-Ih-vMo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="earth-sunrise-in-space-johan-swanepoel" width="900" height="756"/>
+    </resources>
+</document>
