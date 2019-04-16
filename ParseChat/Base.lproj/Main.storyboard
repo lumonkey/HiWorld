@@ -114,7 +114,7 @@
                     <connections>
                         <outlet property="emailF" destination="n4I-rA-vVL" id="Mfb-iI-NOW"/>
                         <outlet property="passwordF" destination="sFj-HE-H4Y" id="ptW-jL-tRY"/>
-                        <segue destination="vFV-Pk-hlg" kind="presentation" id="INO-6z-cpZ"/>
+                        <segue destination="vFV-Pk-hlg" kind="presentation" identifier="LoginSuccess" id="INO-6z-cpZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -269,10 +269,10 @@
             </objects>
             <point key="canvasLocation" x="-343" y="1525"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="pmU-Ua-LjL">
             <objects>
-                <viewController id="wYp-2A-qQM" sceneMemberID="viewController">
+                <viewController id="wYp-2A-qQM" customClass="ChatViewController" customModule="ParseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="98r-Ms-B27">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,6 +423,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="vrh-3N-t7t"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MfW-Tk-jAl">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
