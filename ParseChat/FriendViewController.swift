@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 

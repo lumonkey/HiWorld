@@ -1,18 +1,18 @@
 //
-//  AddCell.swift
+//  MessageCell.swift
 //  ParseChat
 //
-//  Created by Wade Li on 4/13/19.
+//  Created by Wade Li on 4/17/19.
 //  Copyright © 2019 Wade Li. All rights reserved.
 //
 
 import UIKit
 
-class AddCell: UITableViewCell {
+class MessageCell: UITableViewCell {
 
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var usernameL: UILabel!
-    @IBOutlet weak var distanceL: UILabel!
+    @IBOutlet weak var chatL: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

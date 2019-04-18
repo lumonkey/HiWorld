@@ -1,15 +1,16 @@
 //
-//  SearchViewController.swift
+//  MessageViewController.swift
 //  ParseChat
 //
-//  Created by Wade Li on 4/8/19.
+//  Created by Wade Li on 4/17/19.
 //  Copyright © 2019 Wade Li. All rights reserved.
 //
 
 import UIKit
+import Parse
 
-class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+  
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -24,13 +25,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddCell") as! AddCell
-        //cell.photoView =
-        cell.usernameL.text = "Bob"
-        cell.distanceL.text = "30m"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") as! MessageCell
         return cell
     }
-
+    
     /*
     // MARK: - Navigation
 
