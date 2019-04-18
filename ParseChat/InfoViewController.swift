@@ -8,7 +8,6 @@
 
 import UIKit
 import Parse
-import MessageInputBar
 
 class InfoViewController: UIViewController {
 
@@ -23,6 +22,7 @@ class InfoViewController: UIViewController {
     }
     
     @IBAction func onChat(_ sender: Any) {
+        
     }
     
     /*

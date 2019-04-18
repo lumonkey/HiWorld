@@ -26,7 +26,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell") as! ChatCell
-        cell.usernameL.text = "Bob"
         cell.contextL.text = "Hello"
         return cell
     }

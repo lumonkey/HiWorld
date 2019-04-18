@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Parse
+import MessageInputBar
 
 class ChatCell: UITableViewCell {
 
-    @IBOutlet weak var usernameL: UILabel!
+    
+    @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var contextL: UILabel!
     
     override func awakeFromNib() {
