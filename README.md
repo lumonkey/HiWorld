@@ -77,7 +77,7 @@ Optional:
 <img src="http://g.recordit.co/xOlsmQyqBc.gif" width=800><br>
 
 ### Build progress
-<img src="http://g.recordit.co/CSeycK9t8G.gif" height=200>
+<img src="http://g.recordit.co/CSeycK9t8G.gif" width=200>
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
