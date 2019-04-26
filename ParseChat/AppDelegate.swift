@@ -20,7 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.applicationId = "myAppId"
             configuration.server = "http://chatgps.herokuapp.com/parse"
         }))
-        return true
+      
+      
+      // Stay logged in
+      if PFUser.current() != nil{
+        let main = UIStoryboard(name: "Main", bundle: nil) // Load any storyboard, in this instance: Main storyboard
+        let ProfileVC = main.instantiateViewController(withIdentifier: "PostLogin") // Create a VC (bluprint) to instantiate one of our VC
+        
+        // Now we have our instance of that Navigation VC
+        // 1 per application that display the screen 1 at a time
+        window?.rootViewController = ProfileVC
+      }
+
+      return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
