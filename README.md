@@ -102,7 +102,8 @@ The following features are going to be implemented this week:
 
 - [ ] User can add a profile picture.
 - [ ] Profile pictures are shown for posts and comments. 
-- [ ] User can add a friend.
+- [ ] User can press on the 'sayHi' button and it goes to another viewcontroller.
+- [ ] Users' geolocations get to upload to cloud(Heroku).
 - [ ] User can view the nearby users on the map with pinpoints.
 
 ### [BONUS] Digital Wireframes & Mockups
