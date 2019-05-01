@@ -78,7 +78,14 @@ Optional:
 
 ### Build progress
 <img src="http://g.recordit.co/CSeycK9t8G.gif" width=200>
-<img src="https://files.slack.com/files-pri/TEMUX73MK-FJ028Q41Z/image_from_ios.jpg" width=200>
+
+### Build progress - plan change
+* Since always use users' geolocation not only uses huge amout of callular data but also may harm users' privacy (even though only shows to strangers with in a certain distance of range. )So we decided to change a little bit of our map feature. And the changes are as follows:
+  * 1.Only use users' geolocation while they're use the app and using the 'World' feature (so others can see each other while they both are looking for strangers to say 'Hi');
+  * 2.We will keep the range and display users' geolocation within 200 meters range (about your eyesight range, this is safe enough because if you're outside on the street it will be the same thing, someone else is able to see you so this does not encounter privacy issue especially this is totally under users' permissions);
+  * 3.Furthermore, we won't update the locations as frequent as planned (update every 30 seconds) based on two reasons:
+    i)currently we're using Heroku as the cloud platform, it does not have the ability to update so frequently
+    ii)provide more protection over our user to prevent them being tailed by strangers
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
