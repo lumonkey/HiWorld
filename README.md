@@ -87,6 +87,24 @@ Optional:
     i)currently we're using Heroku as the cloud platform, it does not have the ability to update so frequently
     ii)provide more protection over our user to prevent them being tailed by strangers
 
+## User Stories
+
+The following functionality is completed:
+
+- [x] User can log out. 
+- [x] User can sign up with their existed email address. 
+- [x] User stays logged in across restarts. 
+- [x] User can log out. 
+- [x] User can view their personal info. 
+- [x] User can see their current geolocation with 'World' feature. 
+
+The following features are going to be implemented this week:
+
+- [ ] User can add a profile picture.
+- [ ] Profile pictures are shown for posts and comments. 
+- [ ] User can add a friend.
+- [ ] User can view the nearby users on the map.
+
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
 
