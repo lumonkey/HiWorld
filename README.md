@@ -103,7 +103,7 @@ The following features are going to be implemented this week:
 - [ ] User can add a profile picture.
 - [ ] Profile pictures are shown for posts and comments. 
 - [ ] User can add a friend.
-- [ ] User can view the nearby users on the map.
+- [ ] User can view the nearby users on the map with pinpoints.
 
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
