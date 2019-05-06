@@ -1,18 +1,21 @@
 //
-//  LoginViewController.swift
+//  SignUpViewController.swift
 //  ParseChat
 //
-//  Created by Wade Li on 3/25/19.
+//  Created by Wade Li on 4/25/19.
 //  Copyright © 2019 Wade Li. All rights reserved.
 //
 
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var nameF: UITextField!
     @IBOutlet weak var emailF: UITextField!
     @IBOutlet weak var passwordF: UITextField!
+    @IBOutlet weak var password2F: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,20 +23,27 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func onLogin(_ sender: Any) {
-        let username = emailF.text!
-        let password = passwordF.text!
-        if(emailF.text!.isEmpty || passwordF.text!.isEmpty){
+    @IBAction func onSignUp(_ sender: Any) {
+        let user = PFUser()
+        user.username = emailF.text
+        user.password = passwordF.text
+        if(nameF.text!.isEmpty || emailF.text!.isEmpty || passwordF.text!.isEmpty || password2F.text!.isEmpty){
             let alertController = UIAlertController(title:"Missing Info", message: "All the fields must be fill", preferredStyle: .alert)
             let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
             }
             alertController.addAction(OKAction)
             present(alertController, animated: true, completion: nil)
         }
-        else {
-            PFUser.logInWithUsername(inBackground: username, password: password)
-            { (user, error) in
-                if user != nil {
+        else if(passwordF.text != password2F.text){
+            let alertController = UIAlertController(title:"Re-enter Password", message: "The passwords do not match", preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            }
+            alertController.addAction(OKAction)
+            present(alertController, animated: true, completion: nil)
+        }
+        else{
+            user.signUpInBackground { (success, error) in
+                if success {
                     self.performSegue(withIdentifier: "LoginSuccess", sender: nil)
                 }
                 else {

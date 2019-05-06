@@ -8,8 +8,9 @@
 
 import UIKit
 import Parse
+import AlamofireImage
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var profileView: UIImageView!
     @IBOutlet weak var usernameL: UILabel!
@@ -31,6 +32,19 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func onChangeName(_ sender: Any) {
+    }
+    
+    @IBAction func onPic(_ sender: Any) {
+        let p = UIImagePickerController()
+        p.delegate = self
+        p.allowsEditing = true
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            p.sourceType = .camera
+        }
+        else {
+            p.sourceType = .photoLibrary
+        }
+        present(p, animated: true, completion: nil)
     }
     
     /*

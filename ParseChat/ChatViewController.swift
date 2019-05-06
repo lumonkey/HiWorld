@@ -8,10 +8,12 @@
 
 import UIKit
 import Parse
+import MessageInputBar
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,19 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
 
-
+    @IBAction func onSend(_ sender: Any) {
+        let chatMessage = PFObject(className: "Message")
+        chatMessage["text"] = textF.text ?? ""
+        chatMessage.saveInBackground { (success, error) in
+            if success {
+                print("The message was saved!")
+                self.textF.text = ""
+            } else if let error = error {
+                print("Problem saving message: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
