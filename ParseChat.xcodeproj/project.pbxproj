@@ -23,6 +23,7 @@
 		B89888E62249990200D52FD1 /* ParseChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89888E52249990200D52FD1 /* ParseChatUITests.swift */; };
 		B89888F422499B3F00D52FD1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89888F322499B3F00D52FD1 /* LoginViewController.swift */; };
 		B89888F622499B4F00D52FD1 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89888F522499B4F00D52FD1 /* ChatViewController.swift */; };
+		B89B3CDF2286AC7C008E13AE /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89B3CDE2286AC7C008E13AE /* SetupViewController.swift */; };
 		B8A21065225C1D9C00FC3006 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A21064225C1D9C00FC3006 /* FriendViewController.swift */; };
 		B8EDD73C2262354600775E8F /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EDD73B2262354600775E8F /* FriendCell.swift */; };
 		B8EDD7402262356200775E8F /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EDD73F2262356200775E8F /* ChatCell.swift */; };
@@ -73,6 +74,7 @@
 		B89888E72249990200D52FD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B89888F322499B3F00D52FD1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B89888F522499B4F00D52FD1 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		B89B3CDE2286AC7C008E13AE /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		B8A21064225C1D9C00FC3006 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		B8EDD73B2262354600775E8F /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		B8EDD73F2262356200775E8F /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				B83597AE2267D667009346BB /* InfoViewController.swift */,
 				B83597B02267F5DB009346BB /* MessageCell.swift */,
 				B8F417F922722C08004318F6 /* SignUpViewController.swift */,
+				B89B3CDE2286AC7C008E13AE /* SetupViewController.swift */,
 			);
 			path = ParseChat;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				B81A879E22655415003EDDB3 /* MapViewController.swift in Sources */,
 				B89888F422499B3F00D52FD1 /* LoginViewController.swift in Sources */,
 				B89888F622499B4F00D52FD1 /* ChatViewController.swift in Sources */,
+				B89B3CDF2286AC7C008E13AE /* SetupViewController.swift in Sources */,
 				B89888C62249990100D52FD1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

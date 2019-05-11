@@ -1,18 +1,19 @@
 //
-//  LoginViewController.swift
+//  SetupViewController.swift
 //  ParseChat
 //
-//  Created by Wade Li on 3/25/19.
+//  Created by Wade Li on 5/11/19.
 //  Copyright © 2019 Wade Li. All rights reserved.
 //
 
 import UIKit
 import Parse
+import AlamofireImage
 
-class LoginViewController: UIViewController {
+class SetupViewController: UIViewController {
 
-    @IBOutlet weak var emailF: UITextField!
-    @IBOutlet weak var passwordF: UITextField!
+    @IBOutlet weak var picV: UIImageView!
+    @IBOutlet weak var nameF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,24 +21,31 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func onLogin(_ sender: Any) {
-        let username = emailF.text!
-        let password = passwordF.text!
-        if(emailF.text!.isEmpty || passwordF.text!.isEmpty){
-            let alertController = UIAlertController(title:"Missing Info", message: "All the fields must be fill", preferredStyle: .alert)
+    @IBAction func onSetUp(_ sender: Any) {
+        if(nameF.text!.isEmpty){
+            let alertController = UIAlertController(title:"Missing Name", message: "Please enter your name", preferredStyle: .alert)
             let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
             }
             alertController.addAction(OKAction)
             present(alertController, animated: true, completion: nil)
         }
-        else {
-            PFUser.logInWithUsername(inBackground: username, password: password)
-            { (user, error) in
-                if user != nil {
-                    self.performSegue(withIdentifier: "LoginSuccess", sender: nil)
+        else{
+            let info = PFObject(className: "Info")
+            let a: [String] = []
+            info["Name"] = nameF.text!
+            info["User"] = PFUser.current()!
+            let imageData = picV.image!.pngData()
+            let file = PFFileObject(data: imageData!)
+            info["Image"] = file
+            info["X"] = 0.0
+            info["Y"] = 0.0
+            info["Friend"] = a
+            info.saveInBackground { (success, error) in
+                if success {
+                    self.performSegue(withIdentifier: "SetUpSuccess", sender: nil)
                 }
                 else {
-                    let alertController = UIAlertController(title:"Login Fail", message: "Invalid username/password.", preferredStyle: .alert)
+                    let alertController = UIAlertController(title:"Error", message: "Try again later", preferredStyle: .alert)
                     let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
                     }
                     alertController.addAction(OKAction)

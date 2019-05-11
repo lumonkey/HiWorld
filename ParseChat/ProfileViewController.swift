@@ -38,13 +38,20 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let p = UIImagePickerController()
         p.delegate = self
         p.allowsEditing = true
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+    /*    if UIImagePickerController.isSourceTypeAvailable(.camera) {
             p.sourceType = .camera
         }
-        else {
+        else {  */
             p.sourceType = .photoLibrary
-        }
+    //    }
         present(p, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.editedImage] as! UIImage
+        let size = CGSize(width: 150, height: 150)
+        let scaledI = image.af_imageScaled(to: size)
+        profileView.image = scaledI
     }
     
     /*

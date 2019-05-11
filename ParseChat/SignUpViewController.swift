@@ -11,7 +11,6 @@ import Parse
 
 class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var nameF: UITextField!
     @IBOutlet weak var emailF: UITextField!
     @IBOutlet weak var passwordF: UITextField!
     @IBOutlet weak var password2F: UITextField!
@@ -27,7 +26,7 @@ class SignUpViewController: UIViewController {
         let user = PFUser()
         user.username = emailF.text
         user.password = passwordF.text
-        if(nameF.text!.isEmpty || emailF.text!.isEmpty || passwordF.text!.isEmpty || password2F.text!.isEmpty){
+        if(emailF.text!.isEmpty || passwordF.text!.isEmpty || password2F.text!.isEmpty){
             let alertController = UIAlertController(title:"Missing Info", message: "All the fields must be fill", preferredStyle: .alert)
             let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
             }
@@ -44,10 +43,14 @@ class SignUpViewController: UIViewController {
         else{
             user.signUpInBackground { (success, error) in
                 if success {
-                    self.performSegue(withIdentifier: "LoginSuccess", sender: nil)
+                    self.performSegue(withIdentifier: "SignUpSuccess", sender: nil)
                 }
                 else {
-                    print("Error: \(error?.localizedDescription)")
+                    let alertController = UIAlertController(title:"Email Found", message: "Use another email", preferredStyle: .alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                    }
+                    alertController.addAction(OKAction)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         }
