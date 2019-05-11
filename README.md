@@ -76,6 +76,36 @@ Optional:
 ## Wireframes
 <img src="http://g.recordit.co/xOlsmQyqBc.gif" width=800><br>
 
+### Build progress
+<img src="http://g.recordit.co/CSeycK9t8G.gif" width=200>
+
+### Build progress - plan change
+* Since always use users' geolocation not only uses huge amout of callular data but also may harm users' privacy (even though only shows to strangers with in a certain distance of range. )So we decided to change a little bit of our map feature. And the changes are as follows:
+  * 1.Only use users' geolocation while they're use the app and using the 'World' feature (so others can see each other while they both are looking for strangers to say 'Hi');
+  * 2.We will keep the range and display users' geolocation within 200 meters range (about your eyesight range, this is safe enough because if you're outside on the street it will be the same thing, someone else is able to see you so this does not encounter privacy issue especially this is totally under users' permissions);
+  * 3.Furthermore, we won't update the locations as frequent as planned (update every 30 seconds) based on two reasons:
+    i)currently we're using Heroku as the cloud platform, it does not have the ability to update so frequently
+    ii)provide more protection over our user to prevent them being tailed by strangers
+
+## User Stories
+
+The following functionality is completed:
+
+- [x] User can log out. 
+- [x] User can sign up with their existed email address. 
+- [x] User stays logged in across restarts. 
+- [x] User can log out. 
+- [x] User can view their personal info. 
+- [x] User can see their current geolocation with 'World' feature. 
+
+The following features are going to be implemented this week:
+
+- [ ] User can add a profile picture.
+- [ ] Profile pictures are shown for posts and comments. 
+- [ ] User can press on the 'sayHi' button and it goes to another viewcontroller.
+- [ ] Users' geolocations get to upload to cloud(Heroku).
+- [ ] User can view the nearby users on the map with pinpoints.
+
 ### [BONUS] Digital Wireframes & Mockups
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
 
