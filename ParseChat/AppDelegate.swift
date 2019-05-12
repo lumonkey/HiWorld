@@ -20,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             configuration.applicationId = "myAppId"
             configuration.server = "http://chatgps.herokuapp.com/parse"
         }))
+        if PFUser.current() != nil {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let feedViewController = main.instantiateViewController(withIdentifier: "TabBarController")
+            window?.rootViewController = feedViewController
+        }
         return true
     }
 

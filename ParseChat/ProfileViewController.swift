@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profileView: UIImageView!
     @IBOutlet weak var usernameL: UILabel!
@@ -23,36 +23,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOut()
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.window?.rootViewController = loginViewController
     }
     
-    @IBAction func onMyPosts(_ sender: Any) {
-    }
-    
-    @IBAction func onSettings(_ sender: Any) {
-    }
-    
-    @IBAction func onChangeName(_ sender: Any) {
-    }
-    
-    @IBAction func onPic(_ sender: Any) {
-        let p = UIImagePickerController()
-        p.delegate = self
-        p.allowsEditing = true
-    /*    if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            p.sourceType = .camera
-        }
-        else {  */
-            p.sourceType = .photoLibrary
-    //    }
-        present(p, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[.editedImage] as! UIImage
-        let size = CGSize(width: 150, height: 150)
-        let scaledI = image.af_imageScaled(to: size)
-        profileView.image = scaledI
-    }
     
     /*
     // MARK: - Navigation
