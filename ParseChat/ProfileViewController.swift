@@ -18,10 +18,32 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let query = PFQuery(className: "Info")
+        query.whereKey("User", equalTo: PFUser.current()!)
+        query.getFirstObjectInBackground { (objects: PFObject?, error: Error?) in
+            if error != nil {
+                let alertController = UIAlertController(title:"Error", message: "Fail to load", preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+            }
+            else {
+                query.getObjectInBackground(withId: objects!.objectId!) { (info: PFObject?, error: Error?) in
+                    if error != nil {
+                       //Error
+                    }
+                    else {
+                        self.usernameL.text = info!["Name"] as? String
+                        //profile pic
+                    }
+                }
+            }
+        }
     }
-    
+        // Do any additional setup after loading the view.
+
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOut()
         let main = UIStoryboard(name: "Main", bundle: nil)
@@ -29,7 +51,6 @@ class ProfileViewController: UIViewController {
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.window?.rootViewController = loginViewController
     }
-    
     
     /*
     // MARK: - Navigation

@@ -509,14 +509,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-KS-rmL">
-                                <rect key="frame" x="174" y="109" width="29.5" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fub-KS-rmL">
+                                <rect key="frame" x="174" y="109" width="38" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tom12345" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glw-ve-ptF">
-                                <rect key="frame" x="174" y="176" width="72" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userId" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glw-ve-ptF">
+                                <rect key="frame" x="174" y="176" width="43" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -540,7 +540,7 @@
                     <navigationItem key="navigationItem" id="4c2-Zk-leh">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="Uuf-E4-IAw">
                             <connections>
-                                <action selector="onLogout:" destination="W1H-YX-Qtt" id="G4G-Db-Gca"/>
+                                <action selector="onLogout:" destination="W1H-YX-Qtt" id="MrO-bH-5UL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="8lB-il-3wI">
@@ -768,22 +768,31 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frx-fB-frA">
-                                <rect key="frame" x="162" y="418.5" width="51" height="30"/>
+                                <rect key="frame" x="262" y="418.5" width="51" height="30"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
                                     <action selector="onUpdate:" destination="AB3-Cz-LaY" eventType="touchUpInside" id="z14-VJ-Uav"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKz-Ix-8s8">
+                                <rect key="frame" x="63.5" y="418.5" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancel:" destination="AB3-Cz-LaY" eventType="touchUpInside" id="yqG-oJ-PUl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.76727359399999995" green="1" blue="0.60404211259999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Frx-fB-frA" firstAttribute="centerX" secondItem="MBk-xv-Wgw" secondAttribute="centerX" id="55C-ll-g7N"/>
+                            <constraint firstItem="Frx-fB-frA" firstAttribute="centerX" secondItem="MBk-xv-Wgw" secondAttribute="centerX" constant="100" id="55C-ll-g7N"/>
+                            <constraint firstItem="gKz-Ix-8s8" firstAttribute="centerX" secondItem="MBk-xv-Wgw" secondAttribute="centerX" constant="-100" id="83b-fk-mca"/>
                             <constraint firstItem="yNy-Za-PH3" firstAttribute="centerY" secondItem="MBk-xv-Wgw" secondAttribute="centerY" id="Khn-J5-mCM"/>
                             <constraint firstItem="hTW-bY-7Yb" firstAttribute="centerY" secondItem="MBk-xv-Wgw" secondAttribute="centerY" constant="-150" id="Ov0-nm-fi7"/>
                             <constraint firstItem="Frx-fB-frA" firstAttribute="centerY" secondItem="MBk-xv-Wgw" secondAttribute="centerY" constant="100" id="VH5-Xc-SFK"/>
                             <constraint firstItem="yNy-Za-PH3" firstAttribute="centerX" secondItem="MBk-xv-Wgw" secondAttribute="centerX" id="WZ7-Tn-J9m"/>
                             <constraint firstItem="Ebg-e5-Wxa" firstAttribute="centerX" secondItem="MBk-xv-Wgw" secondAttribute="centerX" id="YvP-zv-Rtc"/>
                             <constraint firstItem="hTW-bY-7Yb" firstAttribute="centerX" secondItem="MBk-xv-Wgw" secondAttribute="centerX" id="gAZ-gr-8Eu"/>
+                            <constraint firstItem="gKz-Ix-8s8" firstAttribute="centerY" secondItem="MBk-xv-Wgw" secondAttribute="centerY" constant="100" id="lGE-Jc-qnI"/>
                             <constraint firstItem="Ebg-e5-Wxa" firstAttribute="centerY" secondItem="MBk-xv-Wgw" secondAttribute="centerY" constant="-30" id="wIQ-bE-IKW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jNL-BD-rzm"/>

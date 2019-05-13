@@ -21,14 +21,48 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onCancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func onUpdate(_ sender: Any) {
         let image1 = UIImage(named: "photo-placeholder")
         let image2 = picV.image!
-        if !(image1!.isEqual(image2)) {
-            //Update profile pic
-        }
-        if !(nameChangeF.text!.isEmpty) {
-            //Update name
+        let query = PFQuery(className: "Info")
+        query.whereKey("User", equalTo: PFUser.current()!)
+        query.getFirstObjectInBackground { (objects: PFObject?, error: Error?) in
+            if error != nil {
+                let alertController = UIAlertController(title:"Error", message: "Fail to get user", preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+            }
+            else {
+                if !(image1!.isEqual(image2)) || !(self.nameChangeF.text!.isEmpty) {
+                    query.getObjectInBackground(withId: objects!.objectId!) { (info: PFObject?, error: Error?) in
+                        if let info = info {
+                            if !(image1!.isEqual(image2)) {
+                                let imageData = self.picV.image!.pngData()
+                                let file = PFFileObject(data: imageData!)
+                                info["Image"] = file
+                            }
+                            if !(self.nameChangeF.text!.isEmpty) {
+                                info["Name"] = self.nameChangeF.text!
+                            }
+                            info.saveInBackground()
+                        }
+                        else {
+                            let alertController = UIAlertController(title:"Error", message: "Fail to update info", preferredStyle: .alert)
+                            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+                            }
+                            alertController.addAction(OKAction)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
         }
         dismiss(animated: true, completion: nil)
     }
