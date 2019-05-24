@@ -10,14 +10,14 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class SetupViewController: UIViewController {
+class SetupViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var picV: UIImageView!
     @IBOutlet weak var nameF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameF.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -40,6 +40,7 @@ class SetupViewController: UIViewController {
             info["X"] = 0.0
             info["Y"] = 0.0
             info["Friend"] = a
+            info["Chat"] = a
             info.saveInBackground { (success, error) in
                 if success {
                     self.performSegue(withIdentifier: "SetUpSuccess", sender: nil)
@@ -53,6 +54,11 @@ class SetupViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameF.resignFirstResponder()
+        return true
     }
     
     /*

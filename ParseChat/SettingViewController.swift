@@ -10,14 +10,14 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class SettingViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class SettingViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate  {
 
     @IBOutlet weak var picV: UIImageView!
     @IBOutlet weak var nameChangeF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameChangeF.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -53,13 +53,6 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
                             }
                             info.saveInBackground()
                         }
-                        else {
-                            let alertController = UIAlertController(title:"Error", message: "Fail to update info", preferredStyle: .alert)
-                            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-                            }
-                            alertController.addAction(OKAction)
-                            self.present(alertController, animated: true, completion: nil)
-                        }
                     }
                 }
             }
@@ -68,16 +61,16 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func onCamera(_ sender: Any) {
-        let p = UIImagePickerController()
-        p.delegate = self
-        p.allowsEditing = true
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            p.sourceType = .camera
+            picker.sourceType = .camera
         }
         else {
-            p.sourceType = .photoLibrary
+            picker.sourceType = .photoLibrary
         }
-        present(p, animated: true, completion: nil)
+        present(picker, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -85,16 +78,18 @@ class SettingViewController: UIViewController, UIImagePickerControllerDelegate, 
         let size = CGSize(width: 150, height: 150)
         let scaledI = image.af_imageScaled(to: size)
         picV.image = scaledI
+        dismiss(animated: true, completion: nil)
     }
     
-    /*
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameChangeF.resignFirstResponder()
+        return true
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    }
 
 }

@@ -9,14 +9,15 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailF: UITextField!
     @IBOutlet weak var passwordF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emailF.delegate = self
+        passwordF.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -45,6 +46,25 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @IBAction func onEditing(_ sender: Any) {
+        if passwordF.text!.isEmpty {
+            passwordF.isHidden = false
+        }
+        else {
+            passwordF.isHidden = true
+        }
+    }
+    
+    @IBAction func onFYP(_ sender: Any) {
+        self.performSegue(withIdentifier: "PasswordChange", sender: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailF.resignFirstResponder()
+        passwordF.resignFirstResponder()
+        return true
     }
     
     /*

@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailF: UITextField!
     @IBOutlet weak var passwordF: UITextField!
@@ -18,7 +18,9 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emailF.delegate = self
+        passwordF.delegate = self
+        password2F.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -33,7 +35,7 @@ class SignUpViewController: UIViewController {
             alertController.addAction(OKAction)
             present(alertController, animated: true, completion: nil)
         }
-        else if(passwordF.text != password2F.text){
+        else if(passwordF.text != password2F.text) {
             let alertController = UIAlertController(title:"Re-enter Password", message: "The passwords do not match", preferredStyle: .alert)
             let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
             }
@@ -54,6 +56,31 @@ class SignUpViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @IBAction func onPHidden(_ sender: Any) {
+        if passwordF.text!.isEmpty {
+            passwordF.isHidden = false
+        }
+        else {
+            passwordF.isHidden = true
+        }
+    }
+    
+    @IBAction func onPHidden2(_ sender: Any) {
+        if password2F.text!.isEmpty {
+            password2F.isHidden = false
+        }
+        else {
+            password2F.isHidden = true
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailF.resignFirstResponder()
+        passwordF.resignFirstResponder()
+        password2F.resignFirstResponder()
+        return true
     }
     
     /*

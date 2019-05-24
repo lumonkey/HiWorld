@@ -1,27 +1,56 @@
 //
-//  ProfileViewController.swift
+//  NewViewController.swift
 //  ParseChat
 //
-//  Created by Wade Li on 4/16/19.
+//  Created by Wade Li on 5/24/19.
 //  Copyright © 2019 Wade Li. All rights reserved.
 //
 
 import UIKit
 import Parse
-import AlamofireImage
 
-class ProfileViewController: UIViewController {
+class NewViewController: UIViewController {
 
-    @IBOutlet weak var profileView: UIImageView!
-    @IBOutlet weak var usernameL: UILabel!
-    @IBOutlet weak var userIDL: UILabel!
+    @IBOutlet weak var imageV: UIImageView!
+    @IBOutlet weak var nameF: UILabel!
+    var name: String = ""
+    var pic: UIImage = UIImage()
+    var list: [String] = []
+    var flag: Bool = false
     
-    override func viewDidAppear(_ animated: Bool) {
-        self.display()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        friend()
+        nameF.text = name
+        imageV.image = pic
+        check()
+        // Do any additional setup after loading the view.
     }
     
-    func display(){
-        print("Hi")
+    @IBAction func onHi(_ sender: Any) {
+        if flag {
+            let alertController = UIAlertController(title:"Friendship", message: "You and \(nameF.text) are already friend", preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            }
+            alertController.addAction(OKAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else {
+            let info = PFObject(className: "Message")
+            info["text"] = "Hi"
+            info.saveInBackground { (success, error) in
+                if success {
+                    print("success")
+                }
+                else {
+                    print(error?.localizedDescription)
+                }
+            }
+            self.performSegue(withIdentifier: "SayHi", sender: nil)
+        }
+    }
+    
+    func friend(){
         let query = PFQuery(className: "Info")
         query.whereKey("User", equalTo: PFUser.current()!)
         query.getFirstObjectInBackground { (objects: PFObject?, error: Error?) in
@@ -42,30 +71,20 @@ class ProfileViewController: UIViewController {
                         self.present(alertController, animated: true, completion: nil)
                     }
                     else {
-                        self.usernameL.text = info!["Name"] as? String
-                        let imageF = info!["Image"] as! PFFileObject
-                        let urlS = imageF.url!
-                        let url = URL(string: urlS)!
-                        self.profileView.af_setImage(withURL: url)
-                        self.userIDL.text = PFUser.current()?.username
+                        self.list = info!["Friend"] as! [String]
                     }
                 }
             }
         }
     }
     
-    @IBAction func onLogout(_ sender: Any) {
-        PFUser.logOut()
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.window?.rootViewController = loginViewController
+    func check() {
+        for l in list {
+            if l == nameF.text! {
+                flag = true
+            }
+        }
     }
-    
-    @IBAction func onSettings(_ sender: Any) {
-        self.performSegue(withIdentifier: "Change", sender: nil)
-    }
-    
     /*
     // MARK: - Navigation
 

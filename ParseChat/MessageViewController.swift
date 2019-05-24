@@ -12,6 +12,7 @@ import Parse
 class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     @IBOutlet weak var tableView: UITableView!
+//    var list: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,34 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") as! MessageCell
         return cell
     }
+    
+//    func chat(){
+//        let query = PFQuery(className: "Info")
+//        query.whereKey("User", equalTo: PFUser.current()!)
+//        query.getFirstObjectInBackground { (objects: PFObject?, error: Error?) in
+//            if error != nil {
+//                let alertController = UIAlertController(title:"Error", message: "Fail to get user", preferredStyle: .alert)
+//                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+//                }
+//                alertController.addAction(OKAction)
+//                self.present(alertController, animated: true, completion: nil)
+//            }
+//            else {
+//                query.getObjectInBackground(withId: objects!.objectId!) { (info: PFObject?, error: Error?) in
+//                    if error != nil {
+//                        let alertController = UIAlertController(title:"Error", message: "Fail to load", preferredStyle: .alert)
+//                        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+//                        }
+//                        alertController.addAction(OKAction)
+//                        self.present(alertController, animated: true, completion: nil)
+//                    }
+//                    else {
+//                        self.list = info!["Chat"] as! [String]
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     /*
     // MARK: - Navigation

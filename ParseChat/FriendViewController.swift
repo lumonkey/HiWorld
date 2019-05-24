@@ -11,12 +11,15 @@ import Parse
 
 class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+//    var list: [String] = []
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+//        friend();
         // Do any additional setup after loading the view.
     }
     
@@ -31,6 +34,33 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
 
+//    func friend(){
+//        let query = PFQuery(className: "Info")
+//        query.whereKey("User", equalTo: PFUser.current()!)
+//        query.getFirstObjectInBackground { (objects: PFObject?, error: Error?) in
+//            if error != nil {
+//                let alertController = UIAlertController(title:"Error", message: "Fail to get user", preferredStyle: .alert)
+//                let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+//                }
+//                alertController.addAction(OKAction)
+//                self.present(alertController, animated: true, completion: nil)
+//            }
+//            else {
+//                query.getObjectInBackground(withId: objects!.objectId!) { (info: PFObject?, error: Error?) in
+//                    if error != nil {
+//                        let alertController = UIAlertController(title:"Error", message: "Fail to load", preferredStyle: .alert)
+//                        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+//                        }
+//                        alertController.addAction(OKAction)
+//                        self.present(alertController, animated: true, completion: nil)
+//                    }
+//                    else {
+//                        self.list = info!["Friend"] as! [String]
+//                    }
+//                }
+//            }
+//        }
+//    }
     /*
     // MARK: - Navigation
 
