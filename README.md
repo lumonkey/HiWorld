@@ -74,10 +74,12 @@ Optional:
 * Settings -> Toggle settings
 
 ## Wireframes
-<img src="http://g.recordit.co/xOlsmQyqBc.gif" width=800><br>
+<img src="http://g.recordit.co/D59nwj1NJH.gif" width=800><br>
 
 ### Build progress
-<img src="http://g.recordit.co/2ITb6foLGm.gif" width=200>
+<img src="http://g.recordit.co/1tU0bw356W.gif" width=200>
+
+<img src="http://g.recordit.co/MmkrOifGIX.gif" width=200>
 
 ### Build progress - plan change
 * Since always use users' geolocation not only uses huge amout of callular data but also may harm users' privacy (even though only shows to strangers with in a certain distance of range. )So we decided to change a little bit of our map feature. And the changes are as follows:
@@ -100,16 +102,12 @@ The following functionality is completed:
 - [x] User can change their profile pic and name
 - [x] User can add a profile picture.
 - [x] User get alerted if there is an error.
+- [x] User can press on the 'sayHi' button and it goes to another viewcontroller.
+- [x] Users' geolocations get to upload to cloud(Heroku).
+- [x] User can view the nearby users on the map with pinpoints.
 
 The following features are going to be implemented this week:
 
 - [ ] Profile pictures are shown for posts and comments. 
-- [ ] User can press on the 'sayHi' button and it goes to another viewcontroller.
-- [ ] Users' geolocations get to upload to cloud(Heroku).
-- [ ] User can view the nearby users on the map with pinpoints.
 
-### [BONUS] Digital Wireframes & Mockups
-<img src="https://i.imgur.com/lYHn37F.jpg" height=200>
 
-### [BONUS] Interactive Prototype
-<img src="https://i.imgur.com/AiKfE5g.gif" width=200>
