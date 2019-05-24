@@ -77,7 +77,7 @@ Optional:
 <img src="http://g.recordit.co/xOlsmQyqBc.gif" width=800><br>
 
 ### Build progress
-<img src="http://g.recordit.co/CSeycK9t8G.gif" width=200>
+<img src="http://g.recordit.co/2ITb6foLGm.gif" width=200>
 
 ### Build progress - plan change
 * Since always use users' geolocation not only uses huge amout of callular data but also may harm users' privacy (even though only shows to strangers with in a certain distance of range. )So we decided to change a little bit of our map feature. And the changes are as follows:
@@ -97,10 +97,12 @@ The following functionality is completed:
 - [x] User can log out. 
 - [x] User can view their personal info. 
 - [x] User can see their current geolocation with 'World' feature. 
+- [x] User can change their profile pic and name
+- [x] User can add a profile picture.
+- [x] User get alerted if there is an error.
 
 The following features are going to be implemented this week:
 
-- [ ] User can add a profile picture.
 - [ ] Profile pictures are shown for posts and comments. 
 - [ ] User can press on the 'sayHi' button and it goes to another viewcontroller.
 - [ ] Users' geolocations get to upload to cloud(Heroku).
