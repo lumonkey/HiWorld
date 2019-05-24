@@ -20,7 +20,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         emailF.delegate = self
         passwordF.delegate = self
+        passwordF.isSecureTextEntry = true
         password2F.delegate = self
+        password2F.isSecureTextEntry = true
         // Do any additional setup after loading the view.
     }
     
@@ -41,6 +43,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
             alertController.addAction(OKAction)
             present(alertController, animated: true, completion: nil)
+            
+            
         }
         else{
             user.signUpInBackground { (success, error) in
@@ -56,31 +60,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
-    }
-    
-    @IBAction func onPHidden(_ sender: Any) {
-        if passwordF.text!.isEmpty {
-            passwordF.isHidden = false
-        }
-        else {
-            passwordF.isHidden = true
-        }
-    }
-    
-    @IBAction func onPHidden2(_ sender: Any) {
-        if password2F.text!.isEmpty {
-            password2F.isHidden = false
-        }
-        else {
-            password2F.isHidden = true
-        }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        emailF.resignFirstResponder()
-        passwordF.resignFirstResponder()
-        password2F.resignFirstResponder()
-        return true
     }
     
     /*
