@@ -18,6 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         emailF.delegate = self
         passwordF.delegate = self
+        passwordF.isSecureTextEntry = true
         // Do any additional setup after loading the view.
     }
     
@@ -45,15 +46,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
-        }
-    }
-    
-    @IBAction func onEditing(_ sender: Any) {
-        if passwordF.text!.isEmpty {
-            passwordF.isHidden = false
-        }
-        else {
-            passwordF.isHidden = true
         }
     }
     
