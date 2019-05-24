@@ -74,7 +74,7 @@ Optional:
 * Settings -> Toggle settings
 
 ## Wireframes
-<img src="http://g.recordit.co/xOlsmQyqBc.gif" width=800><br>
+<img src="http://g.recordit.co/D59nwj1NJH.gif" width=800><br>
 
 ### Build progress
 <img src="http://g.recordit.co/1tU0bw356W.gif" width=200>
