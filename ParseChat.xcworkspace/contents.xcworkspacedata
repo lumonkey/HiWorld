@@ -5,6 +5,9 @@
       location = "group:ParseChat.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:/Users/wadeli/Desktop/HiWorld/Pods/Pods">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
